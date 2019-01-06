@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#efefef">
+
+    <com.wang.avi.AVLoadingIndicatorView
+        android:id="@+id/avi"
+        android:layout_width="115dp"
+        android:layout_height="115dp"
+        style="@style/AVLoadingIndicatorView"
+        android:visibility="visible"
+        app:indicatorName="BallClipRotatePulseIndicator"
+        app:indicatorColor="#222"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="20dp"
+        android:layout_gravity="center"
+
+
+        />
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/scrollViewHome"
+        android:layout_width="match_parent"
+        android:layout_height="1200dp"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/homeView"
+            android:background="#efefef"
+            >
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/horizontal_recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#e6e6e6"
+                >
+
+            </android.support.v7.widget.RecyclerView>
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/horizontal_recyclerView1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/horizontal_recyclerView"
+                android:layout_marginBottom="30dp"
+                android:background="#e6e6e6"
+                >
+
+            </android.support.v7.widget.RecyclerView>
+
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/news_recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/horizontal_recyclerView1"
+                >
+
+            </android.support.v7.widget.RecyclerView>
+
+
+        </RelativeLayout>
+
+
+
+
+
+
+    </android.support.v4.widget.NestedScrollView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/text"
+        android:textSize="18sp"
+        android:textColor="@color/colorWhite"
+        android:text="No internet connection..."
+        android:layout_above="@id/reload_image"
+        android:layout_marginBottom="40dp"
+        android:layout_centerHorizontal="true"
+        android:visibility="gone"
+
+        />
+
+    <ImageView
+        android:id="@+id/reload_image"
+        android:layout_width="76dp"
+        android:layout_height="76dp"
+        android:src="@drawable/reload"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+
+
+        />
+
+</RelativeLayout>

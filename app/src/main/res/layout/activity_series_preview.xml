@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#fff"
+    android:layout_marginBottom="50dp"
+    android:fillViewport="true">
+
+
+    <RelativeLayout
+        android:id="@+id/overlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#a6000000"
+        android:visibility="gone"
+        ></RelativeLayout>
+
+    <android.support.v4.widget.NestedScrollView
+
+        android:id="@+id/myScroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        >
+
+
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="550dp"
+            android:id="@+id/poster"
+            android:scaleType="fitXY"
+
+            />
+        <RelativeLayout
+            android:id="@+id/gradient"
+            android:layout_alignBottom="@id/poster"
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:background="@drawable/movie_view_background"
+            ></RelativeLayout>
+
+
+        <LinearLayout
+            android:id="@+id/headerContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/poster"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="-90dp"
+            >
+
+            <ImageView
+
+                android:layout_width="150dp"
+                android:layout_height="205dp"
+                android:id="@+id/poster1"
+                android:scaleType="fitXY"
+
+
+                />
+
+                        <LinearLayout
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginLeft="20dp"
+                            android:layout_gravity="center_vertical"
+                            >
+
+                            <TextView
+                                android:id="@+id/movieTitle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text=""
+                                android:textSize="29sp"
+                                android:layout_marginTop="80dp"
+                                android:textColor="@color/colorBlack"
+                                />
+
+                                            <LinearLayout
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:orientation="horizontal"
+                                                >
+
+
+                                                <TextView
+                                                    android:id="@+id/seriesTitle"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:text="Series"
+                                                    android:textSize="19sp"
+                                                    android:layout_marginTop="10dp"
+
+                                                    />
+
+
+                                                <com.iarcuschin.simpleratingbar.SimpleRatingBar
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    app:srb_starSize="20dp"
+                                                    app:srb_numberOfStars="1"
+                                                    app:srb_rating="1"
+                                                    app:srb_stepSize="0.5"
+                                                    app:srb_borderColor="#333"
+                                                    app:srb_fillColor="#333"
+                                                    android:id="@+id/movieStarts"
+                                                    android:layout_marginTop="10dp"
+                                                    android:layout_marginLeft="10dp"
+
+
+                                                    />
+
+
+                                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/seriesInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_below="@+id/headerContent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="25dp"
+            android:layout_marginTop="25dp"
+
+            >
+
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="22sp"
+                android:text="Overview"
+                android:textColor="#333"
+                android:layout_marginBottom="10dp"
+
+
+                />
+
+            <TextView
+                android:id="@+id/movieOverview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="19sp"
+                android:text=""
+                android:textColor="#333"
+
+
+                />
+
+
+
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_below="@+id/seriesInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/seasonView"
+            android:background="#efefef"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Seasons"
+                android:textSize="20sp"
+                
+                />
+
+
+
+
+            <android.support.v7.widget.RecyclerView
+                android:layout_gravity="center"
+
+                android:id="@+id/seasons_horizontal_recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+
+                android:layout_marginTop="15dp">
+
+            </android.support.v7.widget.RecyclerView>
+        </LinearLayout>
+
+
+
+
+
+
+    </RelativeLayout>
+
+
+    </android.support.v4.widget.NestedScrollView>
+
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="400dp"
+    android:id="@+id/seasonFragment"
+    android:layout_alignParentBottom="true"
+    />
+</RelativeLayout>
